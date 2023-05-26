@@ -18,12 +18,16 @@ public class GitTest {
 			System.out.println("찬호야" + i);
 		}
 		
+
 		for(int i = 0; i < 6; i++) {
 			for(int j = i; j > 0; j--) {
 				System.out.print("*");
 			}
 			System.out.println("");
 		}
+
+		System.out.println("오후에 시험 이걸로 공유하면 될듯");
+
 	}
 
 }
