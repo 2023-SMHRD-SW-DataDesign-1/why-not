@@ -12,7 +12,7 @@ public class GitTest {
 		System.out.println("2");
 		System.out.println("100");
 		System.out.println("4");
-		
+		System.out.println("박치기 하는중");
 
 		for(int i = 0; i < 10; i++) {
 			System.out.println("찬호야" + i);
