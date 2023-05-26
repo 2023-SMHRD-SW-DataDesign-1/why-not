@@ -10,6 +10,7 @@ public class GitTest {
 
 		System.out.println("눈치게임 1");
 		System.out.println("2");
+		System.out.println("3");
 
 
 	}
