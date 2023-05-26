@@ -17,6 +17,13 @@ public class GitTest {
 		for(int i = 0; i < 10; i++) {
 			System.out.println("찬호야" + i);
 		}
+		
+		for(int i = 0; i < 6; i++) {
+			for(int j = i; j > 0; j--) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
 	}
 
 }
