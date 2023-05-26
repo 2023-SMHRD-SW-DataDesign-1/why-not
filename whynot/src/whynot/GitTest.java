@@ -18,6 +18,8 @@ public class GitTest {
 			System.out.println("찬호야" + i);
 		}
 		System.out.println("진혁이형 점심메뉴 알려줘요");
+		System.out.println("오후에 시험 이걸로 공유하면 될듯");
+
 	}
 
 }
