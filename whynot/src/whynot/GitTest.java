@@ -17,6 +17,8 @@ public class GitTest {
 		for(int i = 0; i < 10; i++) {
 			System.out.println("찬호야" + i);
 		}
+		
+		System.out.println("오후에 시험 이걸로 공유하면 될듯");
 	}
 
 }
