@@ -6,6 +6,7 @@ public class GitTest {
 		System.out.println("3일 쉰다 개꿀");
 		System.out.println("한식뷔페 메뉴 뭐임?");
 
+		System.out.println("실시간 반영 ㄷㄷ");
 	}
 
 }
