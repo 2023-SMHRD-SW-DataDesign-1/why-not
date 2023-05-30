@@ -1,33 +1,88 @@
 package View;
 
+import java.util.Scanner;
+
 import Model.ScoreBorad;
 
 public class ScoreBorad_Test {
 
 	public static void main(String[] args) {
 
-		int num = 30;
-		int num2 = 5;
+		Scanner scan = new Scanner(System.in);
 
 		ScoreBorad score = new ScoreBorad();
-
-		score.scoreUpdate_1P(num, num2);
-		score.scoreUpdate_2P(24, 4);
-
-		int[] score_1P = score.getScore_1P();
-		int[] score_2P = score.getScore_2P();
-		String[] borad = score.getBorad();
-
-		for (int i = 0; i < 13; i++) {
-			System.out.println(borad[i] + "\t" + ":" + "\t" + score_1P[i] + "\tㅣ\t" + score_2P[i]);
-
-		}
-		System.out.println();
-
-		int total_1P = score.totalUpdate_1P();
-		int total_2P = score.totalUpdate_2P();
 		
-		System.out.println("Total \t : \t" + total_1P + "\tㅣ\t" + total_2P);
+		int turn = 0;
+		
+		while(turn < 13) {
+			while(true) {
+				score.showScoreBorad();
+				
+				System.out.print("점수 >>");
+				int point = scan.nextInt();
+				
+				System.out.print("점수를 넣을 번호 >> ");
+				int choice = scan.nextInt();
+				
+				while(choice > 13 || choice == 7) {
+						System.out.println("잘못된 번호입니다.");
+						System.out.print("점수를 넣을 번호 >> ");
+						choice = scan.nextInt();
+					
+				}
+				
+				
+				int check = score.scoreUpdate_1P(point, choice);
+				
+				if (check > 0) {
+					System.out.println("이미 채워진 칸입니다.");
+				} else {
+					System.out.println("점수를 저장했습니다.");
+					break;
+				}
+				System.out.println("====================");
+			}
+			
+			while(true) {
+				score.showScoreBorad();
+				
+				System.out.print("점수 >>");
+				int point = scan.nextInt();
+				System.out.print("점수를 넣을 번호 >> ");
+				int choice = scan.nextInt();
+				
+				while(choice > 13 || choice == 7) {
+						System.out.println("잘못된 번호입니다.");
+						System.out.print("점수를 넣을 번호 >> ");
+						choice = scan.nextInt();
+					
+				}
+				
+				int check = score.scoreUpdate_2P(point, choice);
+				
+				if (check > 0) {
+					System.out.println("이미 채워진 칸입니다.");
+				} else {
+					System.out.println("점수를 저장했습니다.");
+					break;
+				}
+				System.out.println("====================");
+			}
+			
+			turn++;			
+		}
+		System.out.println("==========================================");
+		System.out.println("==========================================");
+		System.out.println("게임이 종료되었습니다!");
+		System.out.println("최종 점수판을 공개합니다!");
+		score.showScoreBorad();
+		if(score.totalUpdate_1P() > score.totalUpdate_2P()) {
+			System.out.println("승자는 1Player입니다!");
+		}else if(score.totalUpdate_1P() < score.totalUpdate_2P()) {
+			System.out.println("승자는 2Player입니다!");
+		}else {
+			System.out.println("무승부 입니다!");
+		}
 	}
 
 }

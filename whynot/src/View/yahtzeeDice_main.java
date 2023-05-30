@@ -2,6 +2,8 @@ package View;
 
 import java.util.Scanner;
 
+import Model.ScoreBorad;
+
 public class yahtzeeDice_main {
 
 	public static void main(String[] args) {
@@ -51,7 +53,16 @@ public class yahtzeeDice_main {
 				String P2_id = sc.next();
 				System.out.print("[ 2P_Password 입력 ] : ");
 				String P2_pw = sc.next();
-
+				
+				// 게임 시작 (반복문에 넣을 것)
+				System.out.println();
+				System.out.println("즐거운 요트 다이스 게임 시작!");
+				ScoreBorad scoreBorad = new ScoreBorad();
+				scoreBorad.showScoreBorad();
+				
+				System.out.println("플레이어 1");
+				break;
+				
 			} else if (num == 3) { // 랭킹확인
 				System.out.println(
 						"============================================== 랭킹확인 ==============================================");
