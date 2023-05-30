@@ -6,10 +6,9 @@ import java.util.Collections;
 
 public class Yacht {
 
-	ArrayList<Integer> counts = new ArrayList<>();
+	ArrayList<Integer> counts = new ArrayList<>(); // 주사위 값의 갯수를 저장할 리스트
 
-
-	public void countDices(ArrayList<Integer> finalDice) {
+	public void countDices(ArrayList<Integer> finalDice) { // 주사위의 값의 갯수를 세는 메소드
 		counts.add(0);
 		counts.add(0);
 		counts.add(0);
@@ -18,40 +17,38 @@ public class Yacht {
 		counts.add(0);
 
 		for (int i = 0; i < finalDice.size(); i++) {
-			counts.set(finalDice.get(i) - 1, counts.get(finalDice.get(i) - 1) + 1);
+			counts.set(finalDice.get(i) - 1, counts.get(finalDice.get(i) - 1) + 1); // 원래 있던 counts리스트 값에 +1 해준다.
 
 		}
-		
-		
 	}
-	
-	public int aces() {
-		
+
+	public int aces() { // 1이 나온 주사위 눈의 총합. 최대 5점
+
 		return counts.get(0) * 1;
 	}
-	
-	public int deuces() {
-		
+
+	public int deuces() { // 2가 나온 주사위 눈의 총합. 최대 10점.
+
 		return counts.get(1) * 2;
 	}
-	
-	public int threes() {
-		
+
+	public int threes() { // 3이 나온 주사위 눈의 총합. 최대 15점
+
 		return counts.get(2) * 3;
 	}
-	
-	public int fours() {
-		
+
+	public int fours() { // 4가 나온 주사위 눈의 총합. 최대 20점.
+
 		return counts.get(3) * 4;
 	}
-	
-	public int fives() {
-		
+
+	public int fives() { // 5가 나온 주사위 눈의 총합. 최대 25점.
+
 		return counts.get(4) * 5;
 	}
-	
-	public int sixex() {
-		
+
+	public int sixex() { // 6이 나온 주사위 눈의 총합. 최대 30점.
+
 		return counts.get(5) * 6;
 	}
 
@@ -134,7 +131,7 @@ public class Yacht {
 
 	public int choice() { // 주사위 눈 5개의 총합. 최대 30점.
 		int point = 0;
-		
+
 		for (int i = 0; i < counts.size(); i++) {
 			point += counts.get(i) * (i + 1);
 		}
