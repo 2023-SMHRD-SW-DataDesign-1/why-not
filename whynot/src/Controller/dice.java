@@ -62,13 +62,13 @@ public class dice {
 						}
 					}
 				}else if(num==2) {
-					System.out.println("최종주사위로 선택됩니다.");
+					System.out.println("최종주사위가 선택되었습니다!");
 					for(int i=0 ; i<dice_count; i++) {
 						finalDice.add(pickDice.get(i));
 					}
 					
 					System.out.print("최종주사위: ");
-					for(int i = 0; i<dice_count ; i++) {
+					for(int i = 0; i<5 ; i++) {
 						System.out.print(finalDice.get(i) + "  ");
 					}
 					break;
@@ -80,13 +80,14 @@ public class dice {
 			if (dice_life == 1 || dice_count==1 ) {
 				System.out.println();
 				for (int i = 0; i < dice_count; i++) {
-					finalDice.add(i, rd.nextInt(1, 6));
-					System.out.print("[" + (i + 1) + "번]:  " + finalDice.get(i) + "  ");
+					finalDice.add(rd.nextInt(1, 6));
+					System.out.print("[" + (i + 1) + "번]:  " + finalDice.get(i+dice_count+1) + "  ");
 				}
 				System.out.println();
                
+				System.out.println("최종주사위가 선택되었습니다!");
                 System.out.print("최종주사위: ");
-				for(int i = 0; i<dice_count ; i++) {
+				for(int i = 0; i<5 ; i++) {
 					System.out.print(finalDice.get(i) + "  ");
 				}
 				break;
