@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import yahtzeeDice_DTO.Yacht;
+
 public class dice {
 
 	public static void main(String[] args) {
