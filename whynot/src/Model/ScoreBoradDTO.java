@@ -1,6 +1,6 @@
 package Model;
 
-public class ScoreBorad {
+public class ScoreBoradDTO {
 
 	String borad[] = { "1.  Aces", "2.  Deuces", "3.  Threes", "4.  Fours", "5.  Fives", "6.  Sixes", "\t Bonus",
 			"8.  Choice", "9.  4 of a Kind", "10. Full House", "11. S.Straight", "12. L.Straight", "13. Yacht" };
@@ -46,26 +46,22 @@ public class ScoreBorad {
 		return check;
 	}
 
-	public int totalUpdate_1P() {
+	public void totalUpdate_1P() {
 		int sum = 0;
 		for (int x : score_1P) {
 			sum += x;
 		}
 
-		totalScore_1P = sum;
-
-		return totalScore_1P;
+		totalScore_1P = sum;		
 	}
 
-	public int totalUpdate_2P() {
+	public void totalUpdate_2P() {
 		int sum = 0;
 		for (int x : score_2P) {
 			sum += x;
 		}
 
 		totalScore_2P = sum;
-
-		return totalScore_2P;
 	}
 
 	public void bonusScore_1P() {
@@ -102,13 +98,11 @@ public class ScoreBorad {
 
 		}
 		System.out.println();
-		System.out.println("\t Total \t:\t" + totalUpdate_1P() + "\tㅣ\t" + totalUpdate_2P() + " ㅣㅣ");
-		System.out.println("=============================================");
+		System.out.println("\t Total \t:\t" + getTotalScore_1P() + "\tㅣ\t" + getTotalScore_2P() + " ㅣㅣ");
+		System.out.println("============================================");
 	}
 
-	public int[] getScore_1P() {
-		return score_1P;
-	}
+	
 
 	public int[] getScore_2P() {
 		return score_2P;
@@ -116,6 +110,16 @@ public class ScoreBorad {
 
 	public String[] getBorad() {
 		return borad;
+	}
+
+	public int getTotalScore_1P() {
+		totalUpdate_1P();
+		return totalScore_1P;
+	}
+
+	public int getTotalScore_2P() {
+		totalUpdate_2P();
+		return totalScore_2P;
 	}
 
 }
