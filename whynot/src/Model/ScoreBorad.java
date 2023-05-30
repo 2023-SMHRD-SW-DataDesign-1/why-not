@@ -74,6 +74,17 @@ public class ScoreBorad {
 		return borad;
 	}
 
+	public void showScoreBorad() {
+		
+		for (int i = 0; i < 13; i++) {
+			System.out.println(borad[i] + "\t" + ":" + "\t" + score_1P[i] + "\tㅣ\t" + score_2P[i]);
+
+		}
+		System.out.println();
+		System.out.println("Total \t : \t" + totalUpdate_1P() + "\tㅣ\t" + totalUpdate_2P());
+	}
+	
+	
 	public int[] getScore_1P() {
 		return score_1P;
 	}
