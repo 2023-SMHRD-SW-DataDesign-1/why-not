@@ -43,10 +43,14 @@ public class yahtzeeDice {
 			} else if (num == 2) { // 로그인
 				System.out.println(
 						"============================================== 로그인 ==============================================");
-				System.out.print("[ ID 입력 ] : ");
-				String id = sc.next();
-				System.out.print("[ Password 입력 ] : ");
-				String pw = sc.next();
+				System.out.print("[ 1P_ID 입력 ] : ");
+				String P1_id = sc.next();
+				System.out.print("[ 1P_Password 입력 ] : ");
+				String P1_pw = sc.next();
+				System.out.print("[ 2P_ID 입력 ] : ");
+				String P2_id = sc.next();
+				System.out.print("[ 2P_Password 입력 ] : ");
+				String P2_pw = sc.next();
 
 			} else if (num == 3) { // 랭킹확인
 				System.out.println(
