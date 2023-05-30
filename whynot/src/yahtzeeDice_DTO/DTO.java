@@ -1,5 +1,7 @@
 package yahtzeeDice_DTO;
 
+import java.util.ArrayList;
+
 public class DTO {
 	private String id;
 	private String pw;
@@ -35,6 +37,11 @@ public class DTO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	ArrayList<Integer> dice = new ArrayList<>();
+	
+	
 	
 	
 	
