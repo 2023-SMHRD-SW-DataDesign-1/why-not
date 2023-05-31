@@ -1,3 +1,4 @@
+
 package View;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import function.HashMapMake;
 import function.ScoreBorad;
 import function.Yacht;
 
+
 public class yahtzeeDice_main {
 
 	public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class yahtzeeDice_main {
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
 		JoinController j = new JoinController();
+
 		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
 		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
