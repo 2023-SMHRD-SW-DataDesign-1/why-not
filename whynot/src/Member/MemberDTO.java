@@ -6,11 +6,13 @@ public class MemberDTO {
 	private String nickname;
 	private int point;
 
+
 	public MemberDTO(String id, String pw, String nickname) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.nickname = nickname;
+
 
 	}
 
