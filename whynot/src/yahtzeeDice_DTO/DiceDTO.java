@@ -1,26 +1,26 @@
-package Controller;
+package yahtzeeDice_DTO;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import yahtzeeDice_DTO.Yacht;
-
-public class dice {
-
-	public static void main(String[] args) {
+public class DiceDTO {
+	
+	// methods
+	public ArrayList<Integer> dicelist() {
 
 		// 1. 도구준비
 		Random rd = new Random();
 		Scanner sc = new Scanner(System.in);
 
-		// 2. 변수 및 arraylist
+		// 2. field
 		ArrayList<Integer> finalDice = new ArrayList<Integer>(); // 최종주사위 저장
 		ArrayList<Integer> pickDice = new ArrayList<Integer>(); // 주사위 던진 값들 저장
 		int dice_life = 3; // 주사위 던질 기회
 		int dice_begin = 5; // 초기에 던질 주사위 개수
 		int dice_count = 5; // 던질 주사위 개수(계속 업데이트)
 		int print = 0; // 지금까지 저장된 주사위 프린트하기 위한 변수
+		
 		finalDice.clear(); // 초기화
 
 		// 3. 주사위 돌리기(랜덤숫자 산출)
@@ -89,17 +89,25 @@ public class dice {
 					System.out.print("[" + (i + 1) + "번]:  " + finalDice.get(i + (dice_begin - dice_count)) + "  ");
 				}
 				System.out.println();
+				return finalDice;
+				
 
-				System.out.println("------최종주사위가 선택되었습니다!------");
-				System.out.print("최종주사위: ");
-				for (int i = 0; i < dice_begin; i++) {
-					System.out.print(finalDice.get(i) + "  ");
-				}
-				break;
+//				System.out.println("------최종주사위가 선택되었습니다!------");
+//				System.out.print("최종주사위: ");
+//				for (int i = 0; i < dice_begin; i++) {
+//					System.out.print(finalDice.get(i) + "  ");
+//				}
+//				break;
 			}
 			System.out.println();
 		}
 
 	}
 
+
+
 }
+	
+
+
+
