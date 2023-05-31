@@ -20,7 +20,9 @@ public class ScoreBoradDTO {
 
 		if (count_1P[choice - 1] == 0) {
 			this.score_1P[choice - 1] = score;
-			bonusScore_1P();
+			if (choice < 7) {
+				bonusScore_1P();
+			}
 			count_1P[choice - 1]++;
 
 		} else if (count_1P[choice - 1] > 0) {
@@ -31,12 +33,14 @@ public class ScoreBoradDTO {
 	}
 
 	public int scoreUpdate_2P(int score, int choice) {
-		
+
 		int check = 0;
 
 		if (count_2P[choice - 1] == 0) {
 			this.score_2P[choice - 1] = score;
-			bonusScore_2P();
+			if (choice < 7) {
+				bonusScore_2P();
+			}
 			count_2P[choice - 1]++;
 
 		} else if (count_2P[choice - 1] > 0) {
@@ -52,7 +56,7 @@ public class ScoreBoradDTO {
 			sum += x;
 		}
 
-		totalScore_1P = sum;		
+		totalScore_1P = sum;
 	}
 
 	public void totalUpdate_2P() {
@@ -100,12 +104,6 @@ public class ScoreBoradDTO {
 		System.out.println();
 		System.out.println("\t Total \t:\t" + getTotalScore_1P() + "\tㅣ\t" + getTotalScore_2P() + " ㅣㅣ");
 		System.out.println("============================================");
-	}
-
-	
-
-	public int[] getScore_2P() {
-		return score_2P;
 	}
 
 	public String[] getBorad() {
