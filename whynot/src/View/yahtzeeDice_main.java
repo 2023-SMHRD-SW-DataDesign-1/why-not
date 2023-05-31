@@ -2,6 +2,9 @@ package View;
 
 import java.util.Scanner;
 
+import Member.MemberDAO;
+import Member.MemberDTO;
+//import Model.ScoreBorad;
 import Model.ScoreBoradDTO;
 
 public class yahtzeeDice_main {
@@ -10,6 +13,7 @@ public class yahtzeeDice_main {
 
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
+		MemberDAO mdao = new MemberDAO();
 
 		while (true) {
 			System.out.println(
@@ -42,6 +46,8 @@ public class yahtzeeDice_main {
 				System.out.print("[ Nick-name 입력 ] : ");
 				String name = sc.next();
 
+				mdao.join(new MemberDTO(id, pw, name));
+				
 			} else if (num == 2) { // 로그인
 				System.out.println(
 						"============================================== 로그인 ==============================================");

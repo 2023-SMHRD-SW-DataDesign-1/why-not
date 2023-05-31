@@ -6,10 +6,5 @@ public class MemberDTO {
 	private String NICKNAME;
 	private int POINT;
 
+}
 	
-	
-
-	
-	}
-
-

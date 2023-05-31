@@ -70,10 +70,10 @@ public class Yacht {
 
 		for (int i = 0; i < counts.size(); i++) {
 			if (counts.get(i) == 3) {
-				point = (i + 1) * 3;
+				point += (i + 1) * 3;
 			}
 			if (counts.get(i) == 2) {
-				point = point + (i + 1) * 2;
+				point += (i + 1) * 2;
 			}
 		}
 		return point;
@@ -82,19 +82,17 @@ public class Yacht {
 	public int littleStraight() { // 주사위 눈이 각각 1, 2, 3, 4, 5일 때. 고정 30점
 		int point = 0;
 
-		for (int i = 0; i < counts.size(); i++) {
-			if (counts.get(2) >= 1 && counts.get(3) >= 1) {
-				if ((counts.get(0) >= 1 && counts.get(1) >= 1) || (counts.get(1) >= 1 && counts.get(4) >= 1)
-						|| (counts.get(4) >= 1 && counts.get(5) >= 1)) {
-					point = 30;
-				}
+		if (counts.get(2) >= 1 && counts.get(3) >= 1) {
+			if ((counts.get(0) >= 1 && counts.get(1) >= 1) || (counts.get(1) >= 1 && counts.get(4) >= 1)
+					|| (counts.get(4) >= 1 && counts.get(5) >= 1)) {
+				point = 20;
+			}
 //				if(counts.get(1) >= 1 && counts.get(4) >= 1) {
 //					point = 30;
 //				}
 //				if(counts.get(4) >= 1 && counts.get(5) >= 1) {
 //					point = 30;
 //				}
-			}
 		}
 
 		return point;
@@ -103,14 +101,12 @@ public class Yacht {
 	public int bigStraight() { // 주사위 눈이 각각 2, 3, 4, 5, 6일 때. 고정 30점
 		int point = 0;
 
-		for (int i = 0; i < counts.size(); i++) {
-			if (counts.get(1) >= 1 && counts.get(2) >= 1 && counts.get(3) >= 1 && counts.get(4) >= 1) {
-				if (counts.get(0) >= 1) {
-					point = 30;
-				}
-				if (counts.get(5) >= 1) {
-					point = 30;
-				}
+		if (counts.get(1) >= 1 && counts.get(2) >= 1 && counts.get(3) >= 1 && counts.get(4) >= 1) {
+			if (counts.get(0) >= 1) {
+				point = 30;
+			}
+			if (counts.get(5) >= 1) {
+				point = 30;
 			}
 		}
 
