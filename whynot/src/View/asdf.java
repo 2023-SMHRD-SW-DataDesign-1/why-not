@@ -50,6 +50,20 @@ public class asdf {
 			System.out.println(borad[i] + "\t" + ":" + "\t" + test[i] +  " ㅣㅣ");
 
 		}
+		
+		String[] dice = new String[6];
+
+        // ASCII representations of dice faces
+        dice[0] = "+-------+\n|       |\n|   o   |\n|       |\n+-------+";
+        dice[1] = "+-------+\n| o     |\n|       |\n|     o |\n+-------+";
+        dice[2] = "+-------+\n| o     |\n|   o   |\n|     o |\n+-------+";
+        dice[3] = "+-------+\n| o   o |\n|       |\n| o   o |\n+-------+";
+        dice[4] = "+-------+\n| o   o |\n|   o   |\n| o   o |\n+-------+";
+        dice[5] = "+-------+\n| o   o |\n| o   o |\n| o   o |\n+-------+";
+
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Dice " + (i + 1) + ":\n" + dice[i] + "\n");
+        }
 	}
 
 }

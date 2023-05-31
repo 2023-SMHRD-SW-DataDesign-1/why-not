@@ -123,4 +123,53 @@ public class MemberDAO {
 		close();
 		return Rank;
 	}
+
+	public int plusPoint(String winner) {
+
+		getConn();
+		int result = 0;
+		try {
+			String sql = "update yacht_dice set point = point+200 where nickname = ? ";
+
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, winner);
+			
+			// pstm.setInt(4, dto.getPoint());
+
+			result = pstm.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println("쿼리문 오류");
+			e.printStackTrace();
+		} finally {
+			close();
+
+		}
+
+		return result;
+	}
+	public int minusPoint(String loser) {
+		
+		getConn();
+		int result = 0;
+		try {
+			String sql = "update yacht_dice set point = point-100 where nickname = ? ";
+			
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, loser);
+			
+			// pstm.setInt(4, dto.getPoint());
+			
+			result = pstm.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("쿼리문 오류");
+			e.printStackTrace();
+		} finally {
+			close();
+			
+		}
+		
+		return result;
+	}
 }
