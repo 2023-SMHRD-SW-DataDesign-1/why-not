@@ -73,9 +73,8 @@ public class Yacht {
 
 			}
 			if (counts.get(i) == 2) {
-
 				check2 = true;
-				point += point + (i + 1) * 2;
+				point += (i + 1) * 2;
 
 			}
 
