@@ -6,15 +6,10 @@ import java.util.Collections;
 
 public class Yacht {
 
-	ArrayList<Integer> counts = new ArrayList<>(); // 주사위 값의 갯수를 저장할 리스트
+	ArrayList<Integer> counts; // 주사위 값의 갯수를 저장할 리스트
 
 	public void countDices(ArrayList<Integer> finalDice) { // 주사위의 값의 갯수를 세는 메소드
-		counts.add(0);
-		counts.add(0);
-		counts.add(0);
-		counts.add(0);
-		counts.add(0);
-		counts.add(0);
+		counts = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0)); // 0 넣어주기
 
 		for (int i = 0; i < finalDice.size(); i++) {
 			counts.set(finalDice.get(i) - 1, counts.get(finalDice.get(i) - 1) + 1); // 원래 있던 counts리스트 값에 +1 해준다.
@@ -67,52 +62,61 @@ public class Yacht {
 	// 주사위 눈 5개의 총합. = 최대 28점.
 	public int fullHouse() {
 		int point = 0;
+		boolean check1 = false;
+		boolean check2 = false;
 
 		for (int i = 0; i < counts.size(); i++) {
 			if (counts.get(i) == 3) {
-				point = (i + 1) * 3;
+				check1 = true;
+				point += (i + 1) * 3;
+				
 			}
 			if (counts.get(i) == 2) {
-				point = point + (i + 1) * 2;
+				check2 = true;
+				point += point + (i + 1) * 2;
 			}
+			
+			
 		}
-		return point;
+		if(check1 && check2) return point;
+		else return 0;
+		
 	}
 
 	public int littleStraight() { // 주사위 눈이 각각 1, 2, 3, 4, 5일 때. 고정 30점
 		int point = 0;
 
-		for (int i = 0; i < counts.size(); i++) {
-			if (counts.get(2) >= 1 && counts.get(3) >= 1) {
-				if ((counts.get(0) >= 1 && counts.get(1) >= 1) || (counts.get(1) >= 1 && counts.get(4) >= 1)
-						|| (counts.get(4) >= 1 && counts.get(5) >= 1)) {
-					point = 30;
-				}
+	
+		if (counts.get(2) >= 1 && counts.get(3) >= 1) {
+			if ((counts.get(0) >= 1 && counts.get(1) >= 1) || (counts.get(1) >= 1 && counts.get(4) >= 1)
+					|| (counts.get(4) >= 1 && counts.get(5) >= 1)) {
+				point = 30;
+			}
 //				if(counts.get(1) >= 1 && counts.get(4) >= 1) {
 //					point = 30;
 //				}
 //				if(counts.get(4) >= 1 && counts.get(5) >= 1) {
 //					point = 30;
 //				}
-			}
 		}
+		
 
 		return point;
 	}
 
-	public int bigStraight() { // 주사위 눈이 각각 2, 3, 4, 5, 6일 때. 고정 30점
+	public int bigStraight() { // 5개의 주사위가 값이 이어질때 30점 
 		int point = 0;
 
-		for (int i = 0; i < counts.size(); i++) {
-			if (counts.get(1) >= 1 && counts.get(2) >= 1 && counts.get(3) >= 1 && counts.get(4) >= 1) {
-				if (counts.get(0) >= 1) {
-					point = 30;
-				}
-				if (counts.get(5) >= 1) {
-					point = 30;
-				}
+		
+		if (counts.get(1) >= 1 && counts.get(2) >= 1 && counts.get(3) >= 1 && counts.get(4) >= 1) {
+			if (counts.get(0) >= 1) {
+				point = 30;
+			}
+			if (counts.get(5) >= 1) {
+				point = 30;
 			}
 		}
+		
 
 		return point;
 	}
