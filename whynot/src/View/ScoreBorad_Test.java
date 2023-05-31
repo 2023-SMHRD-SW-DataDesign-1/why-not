@@ -8,25 +8,24 @@ import Controller.ScoreBoradController;
 import yahtzeeDice_DTO.Yacht;
 
 public class ScoreBorad_Test {
-
+	
 	public static void main(String[] args) {
-
 		Scanner scan = new Scanner(System.in);
 		ScoreBoradController scon = new ScoreBoradController();
 		Yacht ya = new Yacht();
-	
+
 		int turn = 0;
 		int sco = 0;
-		
+
 		ArrayList<Integer> test = new ArrayList<>();
 		test.add(1);
 		test.add(3);
 		test.add(2);
 		test.add(4);
 		test.add(5);
-		
+
 		ya.countDices(test);
-		
+
 		HashMap<Integer, Integer> yaMap = new HashMap<Integer, Integer>();
 		yaMap.put(1, ya.aces());
 		yaMap.put(2, ya.deuces());
@@ -34,24 +33,24 @@ public class ScoreBorad_Test {
 		yaMap.put(4, ya.fours());
 		yaMap.put(5, ya.fives());
 		yaMap.put(6, ya.sixex());
+		yaMap.put(7, 7);
 		yaMap.put(8, ya.choice());
 		yaMap.put(9, ya.fourOfAKind());
 		yaMap.put(10, ya.fullHouse());
 		yaMap.put(11, ya.littleStraight());
 		yaMap.put(12, ya.bigStraight());
 		yaMap.put(13, ya.Yacht());
-		
-		
-		while (turn < 3) {
+
+		while (turn < 10) {
 
 			scon.show();
-			while (true) {				
-				
+			while (true) {
+
 				System.out.print("번호 : ");
 				int cho = scan.nextInt();
-				
+
 				sco = yaMap.get(cho);
-				
+
 				int cnt = scon.Update_1P(sco, cho);
 
 				if (cnt == 1) {
@@ -67,13 +66,13 @@ public class ScoreBorad_Test {
 			}
 
 			scon.show();
-			while (true) {		
+			while (true) {
 
 				System.out.print("번호 : ");
 				int cho = scan.nextInt();
 
 				sco = yaMap.get(cho);
-				
+
 				int cnt = scon.Update_2P(sco, cho);
 
 				if (cnt == 1) {
@@ -103,7 +102,7 @@ public class ScoreBorad_Test {
 		} else {
 			System.out.println("무승부 입니다!");
 		}
-		
+
 		scan.close();
 	}
 
