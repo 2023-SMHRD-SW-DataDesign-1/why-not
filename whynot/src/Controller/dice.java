@@ -32,16 +32,31 @@ public class dice {
 				pickDice.add(i, rd.nextInt(1, 6));
 				System.out.print("[" + (i + 1) + "번]:  " + pickDice.get(i) + "  ");
 			}
-			dice_life -= 1; // 횟수 차감
+			
 
 			System.out.println();
 			System.out.println();
 			System.out.println("**남길 주사위를 선택해주세요~**");
 			System.out.print("1. 선택하기   2. 선택안하기 >> ");
 			int num = sc.nextInt(); // 선택하기 값 저장 변수
-
+			
+			// 1,2가 아닌 번호를 입력한 경우
+			while(true) {
+				if(num != 1 && num != 2) {
+					System.out.println("올바른 번호를 입력해주세요!");
+					System.out.println();
+					System.out.println("**남길 주사위를 선택해주세요~**");
+					System.out.print("1. 선택하기   2. 선택안하기 >> ");
+					num = sc.nextInt(); // 선택하기 값 저장 변수
+				}else {
+					break;
+				}
+				
+			}
+			
 			// 선택하기 선택한 경우(1)
 			if (num == 1) {
+				dice_life -= 1; // 횟수 차감
 				System.out.print("1-1. 선택할 주사위의 번호를 이어서 숫자만 입력해주세요~ ex) 123 >>");
 				num = sc.nextInt();
 				while (true) {
@@ -63,8 +78,8 @@ public class dice {
 
 				// 선택안하기 선택한 경우(2)
 			} else if (num == 2) {
-				
-			}
+				dice_life -= 1; // 횟수 차감
+			} 
 
 			// 주사위 던질 기회가 1번만 남을 경우
 			if (dice_life == 1 || dice_count == 0) {
