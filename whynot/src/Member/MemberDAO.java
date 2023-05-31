@@ -5,134 +5,123 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.util.ArrayList;
-
-import Member.MemberDTO;
 
 public class MemberDAO {
 	Connection conn = null;
 	PreparedStatement pstm = null;
 	ResultSet rs = null;
-	
+
 	public void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+
 			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
-			String dbid ="campus_g_0530_4";
-			String dbpw ="smhrd4";
-			
+			String dbid = "campus_g_0530_4";
+			String dbpw = "smhrd4";
+
 			conn = DriverManager.getConnection(dburl, dbid, dbpw);
-			
+
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-	}	
-	
+	}
+
 	public void close() {
 		try {
-			if(rs != null) {
+			if (rs != null) {
 				rs.close();
 			}
-			if(pstm != null) {
+			if (pstm != null) {
 				pstm.close();
 			}
-			if(conn != null) {
+			if (conn != null) {
 				conn.close();
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// 회원가입
-public int join(MemberDTO dto) {
-		
+	public int join(MemberDTO dto) {
+
 		getConn();
 		int result = 0;
 		try {
 			String sql = "insert into YACHT_DICE(id,pw,nickname) values(?,?,?)";
-			
-			pstm=conn.prepareStatement(sql);
-			pstm.setString(1,dto.getId());
-			pstm.setString(2,dto.getPw());
+
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, dto.getId());
+			pstm.setString(2, dto.getPw());
 			pstm.setString(3, dto.getNickname());
-		//	pstm.setInt(4, dto.getPoint());
-			
+			// pstm.setInt(4, dto.getPoint());
+
 			result = pstm.executeUpdate();
-				
-			
+
 		} catch (SQLException e) {
 			System.out.println("쿼리문 오류");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
-			
+
 		}
-		
+
 		return result;
 	}
 
-   // 로그인
-public String login(MemberDTO dto) {
-	getConn();
-	String nickname = null;
-	try {
-		String sql = "select nickname from YACHT_DICE where id = ? and pw = ?";
-		
-		pstm=conn.prepareStatement(sql);
-		pstm.setString(1,dto.getId());
-		pstm.setString(2,dto.getPw());
-		
-		rs = pstm.executeQuery();
-		
-		if(rs.next()) {
-			nickname = rs.getString("nickname");
-		}	
-		
-	} catch (SQLException e) {
-		System.out.println("쿼리문 오류");
-		e.printStackTrace();
-	}
-	close();
-	return nickname;
-}
-  // 랭킹확인
-public ArrayList<MemberDTO> Rank() {
-	getConn();
-	ArrayList<MemberDTO> userList = new ArrayList<MemberDTO>();
-	
-	try {
-		String sql = "select * from JDBC_member";
-		pstm = conn.prepareStatement(sql);
-		rs =pstm.executeQuery();
-		
-		
-		while(rs.next()) {
-			String id = rs.getString(1);
-			String pw = rs.getString(2);
-			String name = rs.getString(3);
-			int age = rs.getInt(4);
-			
-			MemberDTO dto = new MemberDTO(id, pw, name, age);
-			userList.add(dto);
-		}
-		
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	close();
-	return userList;		
-}
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
+	// 로그인
+	public String login(MemberDTO dto) {
+		getConn();
+		String nickname = null;
+		try {
+			String sql = "select nickname from YACHT_DICE where id = ? and pw = ?";
 
-public class MemberDAO {
-	
-	
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, dto.getId());
+			pstm.setString(2, dto.getPw());
+
+			rs = pstm.executeQuery();
+
+			if (rs.next()) {
+				nickname = rs.getString("nickname");
+			}
+
+		} catch (SQLException e) {
+			System.out.println("쿼리문 오류");
+			e.printStackTrace();
+		}
+		close();
+		return nickname;
+	}
+
+	// 랭킹확인
+	public ArrayList<MemberDTO> Rank() {
+		getConn();
+		ArrayList<MemberDTO> userList = new ArrayList<MemberDTO>();
+
+		try {
+			String sql = "select * from JDBC_member";
+			pstm = conn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+
+			while (rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getString(3);
+				int age = rs.getInt(4);
+
+				MemberDTO dto = new MemberDTO(id, pw, name);
+				userList.add(dto);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		close();
+		return userList;
+	}
 }

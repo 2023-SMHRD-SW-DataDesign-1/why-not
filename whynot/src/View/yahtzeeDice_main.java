@@ -1,16 +1,12 @@
 package View;
 
 import java.util.Scanner;
-<<<<<<< HEAD
 
 import Controller.JoinController;
 import Controller.LoginController;
-=======
 
 import Member.MemberDAO;
 import Member.MemberDTO;
-//import Model.ScoreBorad;
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 import Model.ScoreBoradDTO;
 import Member.MemberDTO;
 
@@ -20,7 +16,7 @@ public class yahtzeeDice_main {
 
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
-<<<<<<< HEAD
+
 		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
 		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
@@ -29,9 +25,7 @@ public class yahtzeeDice_main {
 		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
 		System.out.println();
-=======
-		MemberDAO mdao = new MemberDAO();
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
+
 
 		while (true) {
 			System.out.println(
@@ -51,8 +45,7 @@ public class yahtzeeDice_main {
 
 				JoinController joinCon = new JoinController();
 				String result = joinCon.join(new MemberDTO(id, pw, nickname));
-
-				mdao.join(new MemberDTO(id, pw, name));
+				
 				
 			} else if (num == 2) { // 로그인
 				System.out.println(
