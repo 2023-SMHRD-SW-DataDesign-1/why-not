@@ -1,19 +1,18 @@
 package View;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
 import Controller.HashMapController;
 import Controller.JoinController;
 import Controller.LoginController;
 import Controller.ScoreBoradController;
 import Member.MemberDAO;
 import Member.MemberDTO;
-import Model.ScoreBoradDTO;
 import yahtzeeDice_DTO.DiceDTO;
 import yahtzeeDice_DTO.Yacht;
-import Member.MemberDTO;
+
 
 public class yahtzeeDice_main {
 
@@ -30,6 +29,7 @@ public class yahtzeeDice_main {
 		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
 		System.out.println();
+
 
 		while (true) {
 			System.out.println(

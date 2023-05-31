@@ -12,7 +12,6 @@ public class MemberDTO {
 		this.pw = pw;
 		this.nickname = nickname;
 
-
 	}
 
 	public MemberDTO(String id, String pw) {
@@ -65,5 +64,4 @@ public class MemberDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-
 }
