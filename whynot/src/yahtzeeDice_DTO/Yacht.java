@@ -67,30 +67,35 @@ public class Yacht {
 
 		for (int i = 0; i < counts.size(); i++) {
 			if (counts.get(i) == 3) {
+
 				check1 = true;
 				point += (i + 1) * 3;
-				
+
 			}
 			if (counts.get(i) == 2) {
+
 				check2 = true;
 				point += point + (i + 1) * 2;
+
 			}
-			
-			
+
 		}
-		if(check1 && check2) return point;
-		else return 0;
-		
+		if (check1 && check2)
+			return point;
+		else
+			return 0;
+
 	}
 
 	public int littleStraight() { // 주사위 눈이 각각 1, 2, 3, 4, 5일 때. 고정 30점
 		int point = 0;
 
-	
+
 		if (counts.get(2) >= 1 && counts.get(3) >= 1) {
 			if ((counts.get(0) >= 1 && counts.get(1) >= 1) || (counts.get(1) >= 1 && counts.get(4) >= 1)
 					|| (counts.get(4) >= 1 && counts.get(5) >= 1)) {
-				point = 30;
+				point = 20;
+
 			}
 //				if(counts.get(1) >= 1 && counts.get(4) >= 1) {
 //					point = 30;
@@ -107,7 +112,7 @@ public class Yacht {
 	public int bigStraight() { // 5개의 주사위가 값이 이어질때 30점 
 		int point = 0;
 
-		
+
 		if (counts.get(1) >= 1 && counts.get(2) >= 1 && counts.get(3) >= 1 && counts.get(4) >= 1) {
 			if (counts.get(0) >= 1) {
 				point = 30;
