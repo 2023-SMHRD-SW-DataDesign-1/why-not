@@ -39,7 +39,7 @@ public class Dice {
 		while (true) {
 			pickDice.clear(); // 초기화
 
-			System.out.println("0============================================");
+			System.out.println("===================================================================================================");
 			// 처음 5개 주사위 값
 			for (int i = 0; i < dice_count; i++) {
 				pickDice.add(i, rd.nextInt(1, 7));
@@ -80,7 +80,7 @@ public class Dice {
 					// 중간에 지금까지 저장된 주사위값 보여주기
 					print += 1;
 					if (num == 0) {
-						System.out.println("1============================================");
+						System.out.println("===================================================================================================");
 						System.out.println("지금까지 저장된 주사위: ");
 						for (int i = 0; i < print; i++) {
 							System.out.print(dice[remainDice.get(i) - 1] + "\n");
@@ -136,7 +136,7 @@ public class Dice {
 						// 중간에 지금까지 저장된 주사위값 보여주기
 						dice_count += 1;
 						if (num == 0) {
-							System.out.println("2============================================");
+							System.out.println("===================================================================================================");
 							System.out.println("지금까지 저장된 주사위: ");
 							for (int i = 0; i < remainDice.size(); i++) {
 								System.out.println(dice[remainDice.get(i) - 1] + "  ");
@@ -154,7 +154,7 @@ public class Dice {
 			// 주사위 던질 기회가 1번만 남을 경우
 			if (dice_life <= 1 || dice_count == 0) {
 				System.out.println();
-				System.out.println("3============================================");
+				System.out.println("===================================================================================================");
 				finalDice.addAll(remainDice);
 				for (int i = 0; i < dice_count; i++) {
 					finalDice.add(rd.nextInt(1, 7));
@@ -165,13 +165,15 @@ public class Dice {
 					System.out.print("[" + (i + 1) + "번]: " + "\n"
 							+ dice[finalDice.get(i + (dice_begin - dice_count)) - 1] + "\n");
 				}
-				System.out.println("4=====================최종주사위====================");
+				System.out.println("============================================= 최종 주사위 =============================================");
 				for (int i = 0; i < finalDice.size(); i++) {
 					System.out.println(dice[finalDice.get(i) - 1]);
 				}
 
 				System.out.println();
+				System.out.println("===================================================================================================");
 				return finalDice;
+				
 
 			}
 			System.out.println();

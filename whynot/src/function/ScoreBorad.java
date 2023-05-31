@@ -98,14 +98,14 @@ public class ScoreBorad {
 
 	public void showScoreBorad() {
 
-		System.out.println("=============================================");
+		System.out.println("\t\t\t========================1P=============2P==========");
 		for (int i = 0; i < 13; i++) {
-			System.out.println(borad[i] + "\t" + ":" + "\t" + score_1P[i] + "\tㅣ\t" + score_2P[i] + " ㅣㅣ");
+			System.out.println("\t\t\t" + borad[i] + "\t" + ":" + "\t" + score_1P[i] + "\tㅣ\t" + score_2P[i] +  "\t" +"ㅣㅣ");
 
 		}
 		System.out.println();
-		System.out.println("\t Total \t:\t" + getTotalScore_1P() + "\tㅣ\t" + getTotalScore_2P() + " ㅣㅣ");
-		System.out.println("============================================");
+		System.out.println("\t\t\t\t Total \t:\t" + getTotalScore_1P() + "\tㅣ\t" + getTotalScore_2P() +  "\t"+"ㅣㅣ");
+		System.out.println("\t\t\t==================================================");
 	}
 
 	public String[] getBorad() {
