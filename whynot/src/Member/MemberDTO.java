@@ -1,6 +1,5 @@
 package Member;
 
-
 public class MemberDTO {
 	private String id;
 	private String pw;
@@ -13,12 +12,26 @@ public class MemberDTO {
 		this.pw = pw;
 		this.nickname = nickname;
 
+
 	}
 
 	public MemberDTO(String id, String pw) {
 		super();
 		this.id = id;
 		this.pw = pw;
+	}
+
+	public MemberDTO(String id, String pw, String nickname, int point) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.nickname = nickname;
+		this.point = point;
+	}
+
+	public MemberDTO(int point) {
+		super();
+		this.point = point;
 	}
 
 	public String getId() {
@@ -54,7 +67,3 @@ public class MemberDTO {
 	}
 
 }
-=======
-}
-	
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
