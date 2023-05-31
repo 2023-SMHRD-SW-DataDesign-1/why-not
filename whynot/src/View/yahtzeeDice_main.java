@@ -82,10 +82,10 @@ public class yahtzeeDice_main {
 				// 게임시작
 				if (nickname != null && nickname1 != null) {
 
-					System.out.println("=============== 게임시작(주사위 그림) ================");
+					System.out.println("========================================= 게임시작(요트 다이스) =========================================");
 
 					ScoreBorad scon = new ScoreBorad();
-					Yacht ya = new Yacht();
+					
 					Dice ddto = new Dice();
 					HashMapMake hmcon = new HashMapMake();
 
@@ -96,12 +96,12 @@ public class yahtzeeDice_main {
 
 						HashMap<Integer, Integer> yaMap = new HashMap<>();
 						scon.showScoreBorad();
-
+						System.out.println("============================================== 1P ==============================================");
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
 
 						scon.showScoreBorad();
 						while (true) {
-							System.out.println("=========1P==========");
+							
 							int cnt = 0;
 
 							System.out.print("원하는 족보 번호 : ");
@@ -121,12 +121,12 @@ public class yahtzeeDice_main {
 							} else if (cnt <= 0) {
 								System.out.println("점수를 저장했습니다.");
 								break;
-							}
+				 			}
 						}
 
-						System.out.println("=========2P==========");
-
 						scon.showScoreBorad();
+						System.out.println("============================================== 2P ==============================================");
+
 
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
 						scon.showScoreBorad();
@@ -151,7 +151,7 @@ public class yahtzeeDice_main {
 								break;
 							}
 						}
-						System.out.println("==========================================");
+						System.out.println("==========2================================");
 
 						turn++;
 					}
