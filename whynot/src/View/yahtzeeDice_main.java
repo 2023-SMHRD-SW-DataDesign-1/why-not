@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-import Model.ScoreBorad;
+import Model.ScoreBoradDTO;
 
 public class yahtzeeDice_main {
 
@@ -57,7 +57,7 @@ public class yahtzeeDice_main {
 				// 게임 시작 (반복문에 넣을 것)
 				System.out.println();
 				System.out.println("즐거운 요트 다이스 게임 시작!");
-				ScoreBorad scoreBorad = new ScoreBorad();
+				ScoreBoradDTO scoreBorad = new ScoreBoradDTO();
 				scoreBorad.showScoreBorad();
 				
 				System.out.println("플레이어 1");
