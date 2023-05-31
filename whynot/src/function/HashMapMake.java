@@ -1,11 +1,9 @@
-package Controller;
+package function;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import yahtzeeDice_DTO.Yacht;
-
-public class HashMapController {
+public class HashMapMake {
 	
 	Yacht ya = new Yacht();
 	

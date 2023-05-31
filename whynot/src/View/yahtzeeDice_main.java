@@ -3,14 +3,15 @@ package View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import Controller.HashMapController;
+
 import Controller.JoinController;
 import Controller.LoginController;
-import Controller.ScoreBoradController;
-import Member.MemberDAO;
-import Member.MemberDTO;
-import yahtzeeDice_DTO.DiceDTO;
-import yahtzeeDice_DTO.Yacht;
+import DAO.MemberDAO;
+import DTO.MemberDTO;
+import function.Dice;
+import function.HashMapMake;
+import function.ScoreBorad;
+import function.Yacht;
 
 public class yahtzeeDice_main {
 
@@ -80,45 +81,24 @@ public class yahtzeeDice_main {
 
 					System.out.println("=============== 게임시작(주사위 그림) ================");
 
-					ScoreBoradController scon = new ScoreBoradController();
+					ScoreBorad scon = new ScoreBorad();
 					Yacht ya = new Yacht();
-					DiceDTO ddto = new DiceDTO();
-					HashMapController hmcon = new HashMapController();
+					Dice ddto = new Dice();
+					HashMapMake hmcon = new HashMapMake();
 
 					int turn = 0;
 					int sco = 0;
 
-//					ArrayList<Integer> test = new ArrayList<>();
-//					test.add(6);
-//					test.add(6);
-//					test.add(6);
-//					test.add(4);
-//					test.add(5);
-
-//					HashMap<Integer, Integer> yaMap = new HashMap<Integer, Integer>();
-//					yaMap.put(1, ya.aces());
-//					yaMap.put(2, ya.deuces());
-//					yaMap.put(3, ya.threes());
-//					yaMap.put(4, ya.fours());
-//					yaMap.put(5, ya.fives());
-//					yaMap.put(6, ya.sixex());
-//					yaMap.put(7, 7);
-//					yaMap.put(8, ya.choice());
-//					yaMap.put(9, ya.fourOfAKind());
-//					yaMap.put(10, ya.fullHouse());
-//					yaMap.put(11, ya.littleStraight());
-//					yaMap.put(12, ya.bigStraight());
-//					yaMap.put(13, ya.Yacht());
-
 					while (turn < 13) {
 
 						HashMap<Integer, Integer> yaMap = new HashMap<>();
-						scon.show();
+						scon.showScoreBorad();
 
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
 
-						scon.show();
+						scon.showScoreBorad();
 						while (true) {
+							System.out.println("=========1P==========");
 							int cnt = 0;
 
 							System.out.print("원하는 족보 번호 : ");
@@ -141,12 +121,12 @@ public class yahtzeeDice_main {
 							}
 						}
 
-						System.out.println("=========2p==========");
+						System.out.println("=========2P==========");
 
-						scon.show();
+						scon.showScoreBorad();
 
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
-						scon.show();
+						scon.showScoreBorad();
 						while (true) {
 							int cnt = 0;
 							System.out.print("원하는 족보 번호 : ");
@@ -157,7 +137,7 @@ public class yahtzeeDice_main {
 							} else {
 								sco = yaMap.get(cho);
 								cnt = scon.Update_2P(sco, cho);
-							}				
+							}
 
 							if (cnt == 1) {
 								System.out.println("이미 입력된 번호입니다.");
@@ -168,7 +148,7 @@ public class yahtzeeDice_main {
 								break;
 							}
 						}
-						System.out.println("====================");
+						System.out.println("==========================================");
 
 						turn++;
 					}
@@ -177,14 +157,14 @@ public class yahtzeeDice_main {
 					System.out.println("==========================================");
 					System.out.println("게임이 종료되었습니다!");
 					System.out.println("최종 점수판을 공개합니다!");
-					scon.show();
+					scon.showScoreBorad();
 					String winner = "";
 					String loser = "";
-					if (scon.total_1P() > scon.total_2P()) {
+					if (scon.getTotalScore_1P() > scon.getTotalScore_2P()) {
 						System.out.println("승자는 1Player입니다!");
 						winner = nickname;
 						loser = nickname1;
-					} else if (scon.total_1P() < scon.total_2P()) {
+					} else if (scon.getTotalScore_1P() < scon.getTotalScore_2P()) {
 						System.out.println("승자는 2Player입니다!");
 						winner = nickname1;
 						loser = nickname;

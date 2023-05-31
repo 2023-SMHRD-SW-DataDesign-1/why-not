@@ -1,6 +1,6 @@
-package Model;
+package function;
 
-public class ScoreBoradDTO {
+public class ScoreBorad {
 
 	String borad[] = { "1.  Aces", "2.  Deuces", "3.  Threes", "4.  Fours", "5.  Fives", "6.  Sixes", "\t Bonus",
 			"8.  Choice", "9.  4 of a Kind", "10. Full House", "11. S.Straight", "12. L.Straight", "13. Yacht" };
@@ -13,6 +13,8 @@ public class ScoreBoradDTO {
 
 	int totalScore_1P = 0;
 	int totalScore_2P = 0;
+
+
 
 	public int scoreUpdate_1P(int score, int choice) {
 
@@ -118,6 +120,41 @@ public class ScoreBoradDTO {
 	public int getTotalScore_2P() {
 		totalUpdate_2P();
 		return totalScore_2P;
+	}
+
+	public int Update_1P(int score, int choice) {
+		int cnt = 0;
+
+		if (choice > 13 || choice == 7 || choice < 1) {
+			cnt = 2;
+			return cnt;
+		}
+
+		int check = scoreUpdate_1P(score, choice);
+
+		if (check > 0) {
+			cnt = 1;
+		} else {
+			cnt = 0;
+		}
+		return cnt;
+	}
+
+	public int Update_2P(int score, int choice) {
+		int cnt = 0;
+
+		if (choice > 13 || choice == 7 || choice < 1) {
+			cnt = 2;
+			return cnt;
+		}
+		int check = scoreUpdate_2P(score, choice);
+
+		if (check > 0) {
+			cnt = 1;
+		} else {
+			cnt = 0;
+		}
+		return cnt;
 	}
 
 }

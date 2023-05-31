@@ -1,10 +1,10 @@
-package yahtzeeDice_DTO;
+package function;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class DiceDTO {
+public class Dice {
 
 	// methods
 	public ArrayList<Integer> dicelist() {
@@ -50,7 +50,7 @@ public class DiceDTO {
 			System.out.println();
 			System.out.println();
 //			System.out.println("남길 주사위를 선택해주세요");
-			System.out.print("1. 남길 주사위 선택   2. 주사위 전부 돌리기  3. 족보 선택하기 >> ");
+			System.out.print("1. 남길 주사위 선택   2. 남은 주사위 돌리기  3. 족보 선택하기 >> ");
 			int num = sc.nextInt(); // 선택하기 값 저장 변수
 
 			// 1,2가 아닌 번호를 입력한 경우
@@ -59,7 +59,7 @@ public class DiceDTO {
 					System.out.println("올바른 번호를 입력해주세요!");
 					System.out.println();
 
-					System.out.print("1. 남길 주사위 선택   2. 주사위 전부 돌리기  3. 족보 선택하기 >> ");
+					System.out.print("1. 남길 주사위 선택   2. 남은 주사위 돌리기  3. 족보 선택하기 >> ");
 					num = sc.nextInt(); // 선택하기 값 저장 변수
 				} else {
 					break;
@@ -80,7 +80,7 @@ public class DiceDTO {
 					// 중간에 지금까지 저장된 주사위값 보여주기
 					print += 1;
 					if (num == 0) {
-						System.out.println("1-----------------------------------------------------");
+						System.out.println("1============================================");
 						System.out.println("지금까지 저장된 주사위: ");
 						for (int i = 0; i < print; i++) {
 							System.out.print(dice[remainDice.get(i) - 1] + "\n");
@@ -101,7 +101,7 @@ public class DiceDTO {
 
 			if (dice_life == 1 && remainDice.size() != 0) {
 				System.out.println();
-				System.out.println("**저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
+				System.out.println("** 저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
 				System.out.print("1. 네   2. 아니요 >> ");
 				num = sc.nextInt();
 
@@ -110,7 +110,7 @@ public class DiceDTO {
 						System.out.println();
 						System.out.println("올바른 번호를 입력해주세요!");
 						System.out.println();
-						System.out.println("**저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
+						System.out.println("** 저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
 						System.out.print("1. 네   2. 아니요 >> ");
 						num = sc.nextInt();
 					} else {
@@ -136,7 +136,7 @@ public class DiceDTO {
 						// 중간에 지금까지 저장된 주사위값 보여주기
 						dice_count += 1;
 						if (num == 0) {
-							System.out.println("2-----------------------------------------------------");
+							System.out.println("2============================================");
 							System.out.println("지금까지 저장된 주사위: ");
 							for (int i = 0; i < remainDice.size(); i++) {
 								System.out.println(dice[remainDice.get(i) - 1] + "  ");
@@ -154,7 +154,7 @@ public class DiceDTO {
 			// 주사위 던질 기회가 1번만 남을 경우
 			if (dice_life <= 1 || dice_count == 0) {
 				System.out.println();
-				System.out.println("3=====================================================");
+				System.out.println("3============================================");
 				finalDice.addAll(remainDice);
 				for (int i = 0; i < dice_count; i++) {
 					finalDice.add(rd.nextInt(1, 7));
@@ -165,7 +165,7 @@ public class DiceDTO {
 					System.out.print("[" + (i + 1) + "번]: " + "\n"
 							+ dice[finalDice.get(i + (dice_begin - dice_count)) - 1] + "\n");
 				}
-				System.out.println("4========== 최종 주사위 ==========");
+				System.out.println("4=====================최종주사위====================");
 				for (int i = 0; i < finalDice.size(); i++) {
 					System.out.println(dice[finalDice.get(i) - 1]);
 				}
@@ -173,12 +173,6 @@ public class DiceDTO {
 				System.out.println();
 				return finalDice;
 
-//				System.out.println("------최종주사위가 선택되었습니다!------");
-//				System.out.print("최종주사위: ");
-//				for (int i = 0; i < dice_begin; i++) {
-//					System.out.print(finalDice.get(i) + "  ");
-//				}
-//				break;
 			}
 			System.out.println();
 		}

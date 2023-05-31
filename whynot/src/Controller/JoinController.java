@@ -1,7 +1,7 @@
 package Controller;
 
-import Member.MemberDAO;
-import Member.MemberDTO;
+import DAO.MemberDAO;
+import DTO.MemberDTO;
 
 public class JoinController {
 	MemberDAO dao = new MemberDAO();
@@ -9,9 +9,9 @@ public class JoinController {
 	public String join(MemberDTO memberDTO) {
 
 		// 사용자가 입력한 데이터 확인하기
-		System.out.print("id : " + memberDTO.getId());
-		System.out.print(", pw : " + memberDTO.getPw());
-		System.out.println(", nickname : " + memberDTO.getNickname());
+//		System.out.print("id : " + memberDTO.getId());
+//		System.out.print(", pw : " + memberDTO.getPw());
+//		System.out.println(", nickname : " + memberDTO.getNickname());
 //		System.out.println("point : "+memberDTO.getPoint());
 
 		// DB에 접속해서 값 추가하기
@@ -30,13 +30,13 @@ public class JoinController {
 
 	}
 
-	public void plusPoint(String winner) {
-		int cnt = dao.plusPoint(winner);
+	public void plusPoint(String winner) { // 이긴사람 포인트 + 200 메소드
+		dao.plusPoint(winner);
 
 		
 	}
-	public void minusPoint(String loser) {
-		int cnt = dao.minusPoint(loser);
+	public void minusPoint(String loser) { // 진 사람 포인트 -100 메소드
+		dao.minusPoint(loser);
 		
 		
 	}
