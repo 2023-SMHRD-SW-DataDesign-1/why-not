@@ -1,26 +1,12 @@
 package View;
 
-<<<<<<< HEAD
 import java.util.Scanner;
-=======
 import java.util.ArrayList;
 import java.util.Scanner;
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
-
 import Controller.JoinController;
-<<<<<<< HEAD
 import Controller.LoginController;
-
-=======
-import Controller.LoginController;
-
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 import Member.MemberDAO;
-<<<<<<< HEAD
 import Member.MemberDTO;
-=======
-import Member.MemberDTO;
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 import Model.ScoreBoradDTO;
 import Member.MemberDTO;
 
@@ -30,11 +16,6 @@ public class yahtzeeDice_main {
 
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
-<<<<<<< HEAD
-
-=======
-
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
 		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
@@ -43,10 +24,6 @@ public class yahtzeeDice_main {
 		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
 		System.out.println();
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 
 		while (true) {
 			System.out.println(
@@ -66,12 +43,7 @@ public class yahtzeeDice_main {
 
 				JoinController joinCon = new JoinController();
 				String result = joinCon.join(new MemberDTO(id, pw, nickname));
-<<<<<<< HEAD
 				
-				
-=======
-
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 			} else if (num == 2) { // 로그인
 				System.out.println(
 						"============================================== 로그인 ==============================================");

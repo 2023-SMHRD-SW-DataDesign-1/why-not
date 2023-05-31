@@ -87,57 +87,7 @@ public class DiceDTO {
 			} 
 			
 			
-			if(dice_life == 1) {
-				System.out.println();
-				System.out.println("**저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
-				System.out.print("1. 네   2. 아니요 >> ");
-				num = sc.nextInt();
-				
-				
-				while(true) {
-					if(num != 1 && num != 2) {
-						System.out.println();
-						System.out.println("올바른 번호를 입력해주세요!");
-						System.out.println();
-						System.out.println("**저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
-						System.out.print("1. 네   2. 아니요 >> ");
-						num = sc.nextInt();
-					}else {
-						break;
-					}
-					
-				}
-				
-				if(num==1) {
-					System.out.println();
-					for (int i = 0; i < remainDice.size(); i++) {
-						System.out.print("[" + (i+1) + "번] : " + remainDice.get(i) + "  ");						
-					}
-					System.out.println();
-					System.out.print("1-1. 다시 던질 주사위의 번호를 이어서 숫자만 입력해주세요~");
-					num = sc.nextInt();
-					
-					while (true) {
-						int pickNum2 = num % 10; // 숫자 분리 후 저장
-						num = num / 10;
-						remainDice.remove(pickNum2 - 1);
-						// 중간에 지금까지 저장된 주사위값 보여주기
-						dice_count += 1;
-						if (num == 0) {
-							System.out.println("-----------------------------------------------------");
-							System.out.print("지금까지 저장된 주사위: ");
-							for (int i = 0; i < remainDice.size(); i++) {
-								System.out.print(remainDice.get(i) + "  ");
-							}
-							System.out.println();
-							break;
-						}					
-				    }
-					
-				}else if(num==2) {
-					
-				}
-			}
+			if(dice_life == 1) 
 
 			// 주사위 던질 기회가 1번만 남을 경우
 			if (dice_life == 1 || dice_count == 0) {
