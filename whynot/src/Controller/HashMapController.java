@@ -13,6 +13,7 @@ public class HashMapController {
 		ya.countDices(diceList);
 		
 		HashMap<Integer, Integer> yaMap = new HashMap<Integer, Integer>();
+		
 		yaMap.put(1, ya.aces());
 		yaMap.put(2, ya.deuces());
 		yaMap.put(3, ya.threes());
