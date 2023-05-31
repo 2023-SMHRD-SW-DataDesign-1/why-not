@@ -39,10 +39,4 @@ public class DTO {
 	}
 	
 	
-	ArrayList<Integer> dice = new ArrayList<>();
-	
-	
-	
-	
-	
 }

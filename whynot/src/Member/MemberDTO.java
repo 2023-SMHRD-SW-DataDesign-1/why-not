@@ -1,11 +1,20 @@
 package Member;
 
+<<<<<<< HEAD
 public class MemberDTO {
 	private String id;
 	private String pw;
 	private String nickname;
 	private int point;
+=======
+public class MemberDTO {
+	private String ID;
+	private String PW;
+	private String NICKNAME;
+	private int POINT;
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 
+<<<<<<< HEAD
 	public MemberDTO(String id, String pw, String nickname) {
 		super();
 		this.id = id;
@@ -53,3 +62,7 @@ public class MemberDTO {
 	}
 
 }
+=======
+}
+	
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git

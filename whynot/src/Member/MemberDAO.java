@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import Member.MemberDTO;
@@ -128,5 +129,10 @@ public ArrayList<MemberDTO> Rank() {
 	close();
 	return userList;		
 }
+=======
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 
+public class MemberDAO {
+	
+	
 }
