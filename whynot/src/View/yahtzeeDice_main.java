@@ -13,6 +13,7 @@ import function.Dice;
 import function.HashMapMake;
 import function.ScoreBorad;
 import function.Yacht;
+import javazoom.jl.player.MP3Player;
 
 
 public class yahtzeeDice_main {
@@ -22,14 +23,46 @@ public class yahtzeeDice_main {
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
 		JoinController j = new JoinController();
-
-		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
-		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
-		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
-		System.out.println("   #    #     # #       #######    #    #     #  #  #       #####   ");
-		System.out.println("   #    ####### #       #     #    #    #     #  #  #       #       ");
-		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
-		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
+		MP3Player mp3 = new MP3Player();
+		mp3.play("music/BGM.mp3");
+//
+//		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
+//		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
+//		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
+//		System.out.println("   #    #     # #       #######    #    #     #  #  #       #####   ");
+//		System.out.println("   #    ####### #       #     #    #    #     #  #  #       #       ");
+//		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
+//		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
+//		System.out.println();
+		
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠈⠉⠛⠛⠿⢿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⣤⣦⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⠛⠿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⢸⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⢰⣦⣍⠻⢿⣿⡇⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢸⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⡞⠀⠀⠀⠀⠀⠉⠛⠃⠀⠈⠙⠈⠛⠀⠀⠀⣄⡀⠀⣄⢸⠇⡟⣾⣾⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⠏⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⣀⠀⠀⠀⠀⠀⠉⠃⠀⣿⠀⡀⢠⣾⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⠏⡀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⠷⠀⠀⠀⠀⠰⣦⠀⢿⠰⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣷⣱⢣⡟⠄⠀⠀⠸⢷⣦⣄⡀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠸⣶⣤⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⡷⠃⠃⠈⠀⠀⠀⠀⠀⠀⠈⠉⠛⠷⣦⣄⡀⠀⠀⠙⢿⣷⡀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⢀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣦⡄⠀⠀⠀⠉⠻⢷⣶⣤⡀⠉⠁⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣏⡞⠀⠀⠀⠀⠀⠀⠙⠿⠿⠿⠇⣤⣶⣶⣤⠀⠀⠈⠉⠛⠳⠄⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⢙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⣿⣿⠟⣡⣶⣶⣦⡀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⠀⠀⠀⠀⣠⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠿⠿⠟⠁⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣦⡀⠀⠘⠿⣿⡿⠇⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⠀⠛⠿⠿⠋⣴⣶⣶⣦⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣄⣉⠛⠛⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
+				
+		System.out.println();
+		System.out.println("____    ____      ___        ______  __    __  .___________. _______   __    ______  _______ ");
+		System.out.println("\\   \\  /   /     /   \\      /      ||  |  |  | |           ||       \\ |  |  /      ||   ____|");
+		System.out.println(" \\   \\/   /     /  ^  \\    |  ,----'|  |__|  | `---|  |----`|  .--.  ||  | |  ,----'|  |__   ");
+		System.out.println("  \\_    _/     /  /_\\  \\   |  |     |   __   |     |  |     |  |  |  ||  | |  |     |   __|  ");
+		System.out.println("    |  |      /  _____  \\  |  `----.|  |  |  |     |  |     |  '--'  ||  | |  `----.|  |____ ");
+		System.out.println("    |__|     /__/     \\__\\  \\______||__|  |__|     |__|     |_______/ |__|  \\______||_______|");
 		System.out.println();
 
 		while (true) {
