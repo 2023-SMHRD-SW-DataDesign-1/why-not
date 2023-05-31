@@ -2,7 +2,7 @@ package View;
 
 import java.util.Scanner;
 
-import Model.ScoreBorad;
+import Model.ScoreBoradDTO;
 
 public class ScoreBorad_Test {
 
@@ -10,11 +10,11 @@ public class ScoreBorad_Test {
 
 		Scanner scan = new Scanner(System.in);
 
-		ScoreBorad score = new ScoreBorad();
+		ScoreBoradDTO score = new ScoreBoradDTO();
 		
 		int turn = 0;
 		
-		while(turn < 13) {
+		while(turn < 3) {
 			while(true) {
 				score.showScoreBorad();
 				
@@ -27,8 +27,7 @@ public class ScoreBorad_Test {
 				while(choice > 13 || choice == 7) {
 						System.out.println("잘못된 번호입니다.");
 						System.out.print("점수를 넣을 번호 >> ");
-						choice = scan.nextInt();
-					
+						choice = scan.nextInt();					
 				}
 				
 				
@@ -71,14 +70,15 @@ public class ScoreBorad_Test {
 			
 			turn++;			
 		}
+		
 		System.out.println("==========================================");
 		System.out.println("==========================================");
 		System.out.println("게임이 종료되었습니다!");
 		System.out.println("최종 점수판을 공개합니다!");
 		score.showScoreBorad();
-		if(score.totalUpdate_1P() > score.totalUpdate_2P()) {
+		if(score.getTotalScore_1P() > score.getTotalScore_2P()) {
 			System.out.println("승자는 1Player입니다!");
-		}else if(score.totalUpdate_1P() < score.totalUpdate_2P()) {
+		}else if(score.getTotalScore_1P() < score.getTotalScore_2P()) {
 			System.out.println("승자는 2Player입니다!");
 		}else {
 			System.out.println("무승부 입니다!");
