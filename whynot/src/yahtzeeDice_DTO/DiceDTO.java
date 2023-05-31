@@ -142,10 +142,17 @@ public class DiceDTO {
 			// 주사위 던질 기회가 1번만 남을 경우
 			if (dice_life == 1 || dice_count == 0) {
 				System.out.println();
+				System.out.println("=====================================================");
+				finalDice.addAll(remainDice);
 				for (int i = 0; i < dice_count; i++) {
 					finalDice.add(rd.nextInt(1, 6));
+					
+				}
+				
+				for(int i = 0; i<dice_count; i++) {
 					System.out.print("[" + (i + 1) + "번]:  " + finalDice.get(i + (dice_begin - dice_count)) + "  ");
 				}
+				
 				System.out.println();
 				return finalDice;
 				
