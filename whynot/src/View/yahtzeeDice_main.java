@@ -1,12 +1,26 @@
 package View;
 
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+import java.util.ArrayList;
+import java.util.Scanner;
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 
 import Controller.JoinController;
+<<<<<<< HEAD
 import Controller.LoginController;
 
+=======
+import Controller.LoginController;
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 import Member.MemberDAO;
+<<<<<<< HEAD
 import Member.MemberDTO;
+=======
+import Member.MemberDTO;
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 import Model.ScoreBoradDTO;
 import Member.MemberDTO;
 
@@ -16,7 +30,11 @@ public class yahtzeeDice_main {
 
 		Scanner sc = new Scanner(System.in);
 		int num = 0;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
 		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
@@ -25,7 +43,10 @@ public class yahtzeeDice_main {
 		System.out.println("   #    #     # #     # #     #    #    #     #  #  #     # #       ");
 		System.out.println("   #    #     #  #####  #     #    #    ######  ###  #####  ####### ");
 		System.out.println();
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 
 		while (true) {
 			System.out.println(
@@ -45,8 +66,12 @@ public class yahtzeeDice_main {
 
 				JoinController joinCon = new JoinController();
 				String result = joinCon.join(new MemberDTO(id, pw, nickname));
+<<<<<<< HEAD
 				
 				
+=======
+
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
 			} else if (num == 2) { // 로그인
 				System.out.println(
 						"============================================== 로그인 ==============================================");
@@ -78,10 +103,18 @@ public class yahtzeeDice_main {
 			} else if (num == 3) { // 랭킹확인
 				System.out.println(
 						"============================================== 랭킹확인 ==============================================");
-				System.out.print("[ ID 입력 ] : ");
-				String id = sc.next();
+				MemberDAO dao = new MemberDAO();
+				ArrayList<MemberDTO> Rank = dao.Rank();
+				for (int i = 0; i < Rank.size(); i++) {
+					if (Rank.get(i).getPoint() != 0) {
+						System.out.println(i + 1 + "등 nickname : " + Rank.get(i).getNickname() + ", point : "
+								+ Rank.get(i).getPoint());
+					}
+				}
 
-			} else if (num == 4) {
+			}
+
+			else if (num == 4) {
 				System.out.println(
 						"============================================== 프로그램 종료 ==============================================");
 				System.out.println("프로그램을 종료합니다.");
@@ -95,5 +128,4 @@ public class yahtzeeDice_main {
 		}
 
 	}
-
 }

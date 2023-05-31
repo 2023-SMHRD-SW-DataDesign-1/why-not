@@ -5,7 +5,7 @@ public class MemberDTO {
 	private String pw;
 	private String nickname;
 	private int point;
-	
+
 	public MemberDTO(String id, String pw, String nickname) {
 		super();
 		this.id = id;
@@ -18,6 +18,19 @@ public class MemberDTO {
 		super();
 		this.id = id;
 		this.pw = pw;
+	}
+
+	public MemberDTO(String id, String pw, String nickname, int point) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.nickname = nickname;
+		this.point = point;
+	}
+
+	public MemberDTO(int point) {
+		super();
+		this.point = point;
 	}
 
 	public String getId() {
@@ -51,5 +64,4 @@ public class MemberDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-
 }
