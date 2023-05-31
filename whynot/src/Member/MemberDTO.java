@@ -12,7 +12,6 @@ public class MemberDTO {
 		this.pw = pw;
 		this.nickname = nickname;
 
-
 	}
 
 	public MemberDTO(String id, String pw) {
