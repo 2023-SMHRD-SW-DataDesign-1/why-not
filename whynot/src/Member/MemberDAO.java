@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.util.ArrayList;
 
 import Member.MemberDTO;
@@ -102,10 +101,10 @@ public String login(MemberDTO dto) {
   // 랭킹확인
 public ArrayList<MemberDTO> Rank() {
 	getConn();
-	ArrayList<MemberDTO> userList = new ArrayList<MemberDTO>();
+	ArrayList<MemberDTO> Rank = new ArrayList<MemberDTO>();
 	
 	try {
-		String sql = "select * from JDBC_member";
+		String sql = "select * from YACHT_DICE order by point desc";
 		pstm = conn.prepareStatement(sql);
 		rs =pstm.executeQuery();
 		
@@ -113,26 +112,20 @@ public ArrayList<MemberDTO> Rank() {
 		while(rs.next()) {
 			String id = rs.getString(1);
 			String pw = rs.getString(2);
-			String name = rs.getString(3);
-			int age = rs.getInt(4);
+			String nickname = rs.getString(3);
+			int point = rs.getInt(4);
 			
-			MemberDTO dto = new MemberDTO(id, pw, name, age);
-			userList.add(dto);
+			MemberDTO dto = new MemberDTO(id, pw, nickname, point);
+			Rank.add(dto);
 		}
 		
 		
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	
 	close();
-	return userList;		
+	return Rank;		
 }
-=======
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-SW-DataDesign-1/why-not.git
+}
 
-public class MemberDAO {
-	
-	
-}
