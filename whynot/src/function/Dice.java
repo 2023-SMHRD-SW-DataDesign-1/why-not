@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javazoom.jl.player.MP3Player;
+
 public class Dice {
 
 	// methods
 	public ArrayList<Integer> dicelist() {
 
 		// 1. 도구준비
+		MP3Player mp3 = new MP3Player();
 		Random rd = new Random();
 		Scanner sc = new Scanner(System.in);
 
@@ -38,7 +41,7 @@ public class Dice {
 		// 3. 주사위 돌리기(랜덤숫자 산출)
 		while (true) {
 			pickDice.clear(); // 초기화
-
+			mp3.play("music/Dice.mp3");
 			System.out.println("===================================================================================================");
 			// 처음 5개 주사위 값
 			for (int i = 0; i < dice_count; i++) {
@@ -72,6 +75,7 @@ public class Dice {
 				dice_life -= 1; // 횟수 차감
 				System.out.print("1-1. 선택할 주사위의 번호를 이어서 숫자만 입력해주세요~ ex) 123 >>");
 				num = sc.nextInt();
+				mp3.play("music/Dice.mp3");
 				while (true) {
 					int pickNum = num % 10; // 숫자 분리 후 저장
 					num = num / 10;
@@ -92,6 +96,7 @@ public class Dice {
 
 				// 선택안하기 선택한 경우(2)
 			} else if (num == 2) {
+				mp3.play("music/Dice.mp3");
 				dice_life -= 1; // 횟수 차감
 			} else if (num == 3) {
 				remainDice.addAll(pickDice);
@@ -104,6 +109,7 @@ public class Dice {
 				System.out.println("** 저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
 				System.out.print("1. 네   2. 아니요 >> ");
 				num = sc.nextInt();
+			
 
 				while (true) {
 					if (num != 1 && num != 2) {
@@ -113,6 +119,7 @@ public class Dice {
 						System.out.println("** 저장된 주사위 중 다시 던지고 싶은 주사위가 있습니까? **");
 						System.out.print("1. 네   2. 아니요 >> ");
 						num = sc.nextInt();
+						
 					} else {
 						break;
 					}
@@ -128,7 +135,8 @@ public class Dice {
 					System.out.println();
 					System.out.print("1-1. 다시 던질 주사위의 번호를 이어서 숫자만 입력해주세요~");
 					num = sc.nextInt();
-
+					mp3.play("music/Dice.mp3");
+					
 					while (true) {
 						int pickNum2 = num % 10; // 숫자 분리 후 저장
 						num = num / 10;
@@ -147,6 +155,7 @@ public class Dice {
 					}
 
 				} else if (num == 2) {
+					mp3.play("music/Dice.mp3");
 
 				}
 			}

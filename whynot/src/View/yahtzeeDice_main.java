@@ -25,7 +25,7 @@ public class yahtzeeDice_main {
 		JoinController j = new JoinController();
 		MP3Player mp3 = new MP3Player();
 		mp3.play("music/BGM.mp3");
-//
+	
 //		System.out.println("#     #    #     #####  #     # ####### ######  ###  #####  ####### ");
 //		System.out.println(" #   #    # #   #     # #     #    #    #     #  #  #     # #       ");
 //		System.out.println("  # #    #   #  #       #     #    #    #     #  #  #       #       ");
