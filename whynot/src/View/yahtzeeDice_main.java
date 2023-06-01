@@ -14,7 +14,6 @@ import function.HashMapMake;
 import function.ScoreBorad;
 import javazoom.jl.player.MP3Player;
 
-
 public class yahtzeeDice_main {
 
 	public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class yahtzeeDice_main {
 		JoinController j = new JoinController();
 		MP3Player mp3 = new MP3Player();
 		mp3.play("music/BGM.mp3");
-		
+
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠈⠉⠛⠛⠿⢿⣿⣿⣿⣿⣿");
@@ -45,14 +44,20 @@ public class yahtzeeDice_main {
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⣄⣉⠛⠛⢁⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 		System.out.println("                      ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
-				
+
 		System.out.println();
-		System.out.println("____    ____      ___        ______  __    __  .___________. _______   __    ______  _______ ");
-		System.out.println("\\   \\  /   /     /   \\      /      ||  |  |  | |           ||       \\ |  |  /      ||   ____|");
-		System.out.println(" \\   \\/   /     /  ^  \\    |  ,----'|  |__|  | `---|  |----`|  .--.  ||  | |  ,----'|  |__   ");
-		System.out.println("  \\_    _/     /  /_\\  \\   |  |     |   __   |     |  |     |  |  |  ||  | |  |     |   __|  ");
-		System.out.println("    |  |      /  _____  \\  |  `----.|  |  |  |     |  |     |  '--'  ||  | |  `----.|  |____ ");
-		System.out.println("    |__|     /__/     \\__\\  \\______||__|  |__|     |__|     |_______/ |__|  \\______||_______|");
+		System.out.println(
+				"____    ____      ___        ______  __    __  .___________. _______   __    ______  _______ ");
+		System.out.println(
+				"\\   \\  /   /     /   \\      /      ||  |  |  | |           ||       \\ |  |  /      ||   ____|");
+		System.out.println(
+				" \\   \\/   /     /  ^  \\    |  ,----'|  |__|  | `---|  |----`|  .--.  ||  | |  ,----'|  |__   ");
+		System.out.println(
+				"  \\_    _/     /  /_\\  \\   |  |     |   __   |     |  |     |  |  |  ||  | |  |     |   __|  ");
+		System.out.println(
+				"    |  |      /  _____  \\  |  `----.|  |  |  |     |  |     |  '--'  ||  | |  `----.|  |____ ");
+		System.out.println(
+				"    |__|     /__/     \\__\\  \\______||__|  |__|     |__|     |_______/ |__|  \\______||_______|");
 		System.out.println();
 
 		while (true) {
@@ -105,26 +110,28 @@ public class yahtzeeDice_main {
 				// 게임시작
 				if (nickname != null && nickname1 != null) {
 
-					System.out.println("========================================= 게임시작(요트 다이스) =========================================");
+					System.out.println(
+							"========================================= 게임시작(요트 다이스) =========================================");
 
 					ScoreBorad scon = new ScoreBorad();
-					
+
 					Dice ddto = new Dice();
 					HashMapMake hmcon = new HashMapMake();
 
 					int turn = 0;
 					int sco = 0;
 
-					while (turn < 13) {
+					while (turn < 12) {
 
 						HashMap<Integer, Integer> yaMap = new HashMap<>();
 						scon.showScoreBorad();
-						System.out.println("============================================== 1P ==============================================");
+						System.out.println(
+								"============================================== 1P ==============================================");
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
 
 						scon.showScoreBorad();
 						while (true) {
-							
+
 							int cnt = 0;
 
 							System.out.print("원하는 족보 번호 : ");
@@ -144,12 +151,12 @@ public class yahtzeeDice_main {
 							} else if (cnt <= 0) {
 								System.out.println("점수를 저장했습니다.");
 								break;
-				 			}
+							}
 						}
 
 						scon.showScoreBorad();
-						System.out.println("============================================== 2P ==============================================");
-
+						System.out.println(
+								"============================================== 2P ==============================================");
 
 						yaMap = hmcon.makeHashMap(ddto.dicelist());
 						scon.showScoreBorad();
@@ -183,9 +190,26 @@ public class yahtzeeDice_main {
 					System.out.println("==========================================");
 					System.out.println("게임이 종료되었습니다!");
 					System.out.println("최종 점수판을 공개합니다!");
+					
 					scon.showScoreBorad();
 					String winner = "";
 					String loser = "";
+
+					System.out.println();
+					System.out.println(
+							"____    __    ____  __  .__   __. .__   __.  _______ .______       __   __   __  ");
+					System.out.println(
+							"\\   \\  /  \\  /   / |  | |  \\ |  | |  \\ |  | |   ____||   _  \\     |  | |  | |  | ");
+					System.out.println(
+							" \\   \\/    \\/   /  |  | |   \\|  | |   \\|  | |  |__   |  |_)  |    |  | |  | |  | ");
+					System.out.println(
+							"  \\            /   |  | |  . `  | |  . `  | |   __|  |      /     |  | |  | |  | ");
+					System.out.println(
+							"   \\    /\\    /    |  | |  |\\   | |  |\\   | |  |____ |  |\\  \\----.|__| |__| |__| ");
+					System.out.println(
+							"    \\__/  \\__/     |__| |__| \\__| |__| \\__| |_______|| _| `._____|(__) (__) (__) ");
+					System.out.println();
+
 					if (scon.getTotalScore_1P() > scon.getTotalScore_2P()) {
 						System.out.println("승자는 1Player입니다!");
 						winner = nickname;
